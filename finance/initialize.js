@@ -67,8 +67,8 @@ $(function () {
                 history.replaceState(null, null, "index.html" + location.search + "&codes[]=" + code);
                 codes.push(code);
             }
-            $div.addClass("graph_container").append($("<div>").text(quandl.name));
             quandl.setResult(data);
+            $div.addClass("graph_container").append($("<div>").text(quandl.name));
             createGraph(quandl.formatedResult, quandl.id);
         }).fail(function() {
             $div.remove();

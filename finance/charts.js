@@ -1,6 +1,5 @@
 function Quandl(code) {
     this.code = code;
-    this.name = code.replace("/", " / ");
     this.id = code.replace("/", "_");
 }
 
@@ -9,6 +8,7 @@ Quandl.prototype = {
     constructor: Quandl,
 
     setResult: function (data) {
+        this.name = data.dataset.name + " - " + this.code.replace("/", " / ");
         var parseDate = d3.timeParse("%Y-%m-%d");
         this.formatedResult = data.dataset.data.map(function (d) {
             return {
@@ -26,10 +26,7 @@ function createGraph(data, divId) {
         width = 600 - margin.left - margin.right,
         height = 350 - margin.top - margin.bottom;
 
-    var parseTime = d3.timeParse("%d-%b-%y");
-
     var x = d3.scaleTime().range([0, width]);
-
     var y = d3.scaleLinear().range([height, 0]);
 
     var line = d3.line()
@@ -39,12 +36,12 @@ function createGraph(data, divId) {
         .y(function (d) {
             return y(d.close);
         });
+
     var svg = d3.select("#" + divId).append("svg")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
 
     x.domain(d3.extent(data, function (d) {
         return d.date;
@@ -67,8 +64,7 @@ function createGraph(data, divId) {
         .attr("transform", "rotate(-90)")
         .attr("y", 6)
         .attr("dy", ".71em")
-        .style("text-anchor", "end")
-        .text("Price ($)");
+        .style("text-anchor", "end");
 
     svg.append("path")
         .datum(data)
