@@ -23,8 +23,8 @@ Quandl.prototype = {
 function createGraph(data, divId) {
 
     var margin = {top: 20, right: 20, bottom: 30, left: 50},
-        width = 960 - margin.left - margin.right,
-        height = 500 - margin.top - margin.bottom;
+        width = 600 - margin.left - margin.right,
+        height = 350 - margin.top - margin.bottom;
 
     var parseTime = d3.timeParse("%d-%b-%y");
 

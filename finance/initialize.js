@@ -45,7 +45,7 @@ $(function () {
     function getEmptyChartsForm() {
         function submitCode() {
             var $codeTextField = $("#codeTextField");
-            var code = $codeTextField.val();
+            var code = $codeTextField.val().replace(/ /g,'').toUpperCase();
             $codeTextField.val("");
             if (codes.indexOf(code) === -1) {
                 addChart(code);
