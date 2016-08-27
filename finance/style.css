@@ -39,6 +39,10 @@ text {
     shape-rendering: crispEdges;
 }
 
+.tick line{
+    opacity: 0.1;
+}
+
 path.line {
     fill: none;
     stroke: white;
