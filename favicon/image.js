@@ -6,6 +6,28 @@ function FASymbol(name, id, unicode, $icon) {
 }
 
 $(window).on('load', function () {
+
+    var symbol = "\uf004";
+    var color = "#ffffff";
+    var backgroundColor = "#64b3f4";
+
+
+    $("#color, #background_color").minicolors({
+        change: function(value, opacity) {
+            console.log(value);
+            if(this.id == "color") {
+                color = value;
+            } else {
+                backgroundColor = value;
+            }
+            draw();
+        },
+        format: "rgb",
+        opacity: true
+    });
+
+
+
     var canvas = document.getElementById('canvas');
     var sideLength = 1024;
     canvas.width = sideLength;
@@ -61,39 +83,37 @@ $(window).on('load', function () {
         });
     });
 
-    var symbol = "\uf004";
-    var color = "white";
-    var backgroundColor = "#6184d8";
 
-    updateColor = function () {
-        color = "#" + $("#color").val();
-        draw();
-    };
 
-    updateBackgroundColor = function () {
-        backgroundColor = "#" + $("#background_color").val();
-        draw();
-    };
 
     function draw() {
-        canvas.width = sideLength;
-        canvas.height = sideLength;
-        var i = sideLength;
+        if (sideLength > 0) {
+            canvas.width = sideLength;
+            canvas.height = sideLength;
+            var i = sideLength;
 
-        ctx.fillStyle = backgroundColor;
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = backgroundColor;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-        ctx.textAlign = "center";
-        ctx.textBaseline = "middle";
-        ctx.fillStyle = color;
-        do {
-            ctx.font = i + "px FontAwesome";
-            i--;
-        } while (ctx.measureText(symbol).width > sideLength);
+            ctx.textAlign = "center";
+            ctx.textBaseline = "middle";
+            do {
+                ctx.font = i + "px FontAwesome";
+                i--;
+            } while (ctx.measureText(symbol).width > sideLength);
 
-        ctx.font = (i * ($("#size").val() / 100)) + "px FontAwesome";
-        ctx.fillText(symbol, sideLength / 2, sideLength / 2);
-        canvasToFavicon(canvas);
+            ctx.font = (i * ($("#size").val() / 100)) + "px FontAwesome";
+
+
+
+            ctx.fillStyle = "rgba(0, 0, 0, 1)";
+            ctx.globalCompositeOperation = "destination-out";
+            ctx.fillText(symbol, sideLength / 2, sideLength / 2);
+            ctx.fillStyle = color;
+            ctx.globalCompositeOperation = "source-over";
+            ctx.fillText(symbol, sideLength / 2, sideLength / 2);
+            canvasToFavicon(canvas);
+        }
     }
 });
 

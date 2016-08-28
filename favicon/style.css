@@ -1,3 +1,10 @@
+/*#1496bb*/
+/*#6DBDD6*/
+/*#6d7993*/
+/*#64b3f4*/
+/*background: linear-gradient(90deg, #c2e59c, #64b3f4 80%) no-repeat;*/
+/*background: linear-gradient(90deg, #f46b45, #eea849 80%) no-repeat;*/
+
 * {
     font-family: "Raleway", sans-serif;
     margin: 0;
@@ -9,7 +16,6 @@ body {
     flex-direction: column;
     min-height: 100vh;
 }
-
 
 #upper {
     width: 100vw;
@@ -24,12 +30,13 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #6184d8;
+    /*background: linear-gradient(0deg, #c2e59c, #64b3f4 100%) no-repeat;*/
+    background-color: #64b3f4;
     flex-grow: 1;
 }
 
 #download {
-    color: #6184d8;;
+    color: #64b3f4;;
 }
 
 #canvas {
@@ -79,9 +86,10 @@ body {
     margin-top: 5px;
 }
 
-#mycanvas {
+#canvas {
     width: 100px;
     height: 100px;
+    background-image: url(grid.png);
 }
 
 #search_container {
@@ -89,14 +97,30 @@ body {
     margin-bottom: 20px;
 }
 
-.jscolor {
-    border: 1px solid #6184d8;
-    color: #6184d8;
+/*#colors {*/
+/*display: flex;*/
+/*flex-direction: row;*/
+/*justify-content: space-between;*/
+/*width: 400px;*/
+/*}*/
+
+#color, #background_color {
+    width: 170px;
+}
+
+.minicolors-theme-default .minicolors-swatch {
+    top: 6px;
+    border-color: #64b3f4;
+}
+
+.color_picker {
+    border: 1px solid #64b3f4;
+    color: #64b3f4;
     width: 187px;
 }
 
-.jscolor:focus {
-    box-shadow: 0 0 7px #6184d8;
+.color_picker:focus {
+    box-shadow: 0 0 7px #64b3f4;
 }
 
 input {
@@ -117,6 +141,7 @@ input {
 
 #size {
     padding-left: 0;
+    border: none;
 }
 
 input:focus {
