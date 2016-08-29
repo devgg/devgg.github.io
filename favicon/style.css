@@ -13,8 +13,10 @@ body {
 #colors {
     display: flex;
     justify-content: space-between;
-    width: 402px
+    max-width: 402px;
+    flex-wrap: wrap;
 }
+
 
 #upper {
     width: 100vw;
@@ -107,6 +109,8 @@ body {
     box-shadow: 0 0 7px #64b3f4;
 }
 
+
+
 #download {
     background-color: white;
     font-size: 14px;
@@ -120,6 +124,8 @@ body {
     line-height: 30px;
     cursor: pointer;
 }
+
+
 
 #download:hover {
     background-color: #64b3f4;
@@ -171,4 +177,21 @@ input:focus {
 
 *:-ms-input-placeholder {
     color: #EEEEEE;
+}
+
+
+@media screen and (max-width: 420px) {
+
+    #download {
+        width: 80vw;
+    }
+
+    input {
+        width: 80vw;
+    }
+
+    #icon_container {
+        width: 100vw;
+        justify-content: center;
+    }
 }
