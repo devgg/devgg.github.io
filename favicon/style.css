@@ -180,10 +180,14 @@ input:focus {
 }
 
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 720px) {
 
     #colors {
         justify-content: center;
+    }
+
+    .color_picker {
+        width: 80vw;
     }
 
     #download {
