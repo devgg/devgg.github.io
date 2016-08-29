@@ -8,31 +8,20 @@ function FASymbol(name, id, unicode, $icon) {
 $(window).on('load', function () {
 
     var symbol = "\uf004";
-    var color = "#ffffff";
-    var backgroundColor = "#64b3f4";
-
-
-    $("#color, #background_color").minicolors({
-        change: function(value, opacity) {
-            console.log(value);
-            if(this.id == "color") {
-                color = value;
-            } else {
-                backgroundColor = value;
-            }
-            draw();
-        },
-        format: "rgb",
-        opacity: true
-    });
-
-
-
     var canvas = document.getElementById('canvas');
     var sideLength = 1024;
     canvas.width = sideLength;
     canvas.height = sideLength;
     var ctx = canvas.getContext('2d');
+    draw();
+
+
+    $("#size").on("input", draw);
+    $("#color, #background_color").minicolors({
+        change: draw,
+        format: "rgb",
+        opacity: true
+    });
 
     var symbols = [];
     $("#search").on("input", function () {
@@ -47,20 +36,10 @@ $(window).on('load', function () {
     });
 
     $("#download").on("click", function () {
-        window.open(canvas.toDataURL(), "_blank");
-
-        //var w = window.open();
-        //w.document.write('<img src="' + canvas.toDataURL() + '" width="48" height="48"/>');
-
-        //canvas.toBlob(function (blob) {
-        //    saveAs(blob, "Dashboard.png");
-        //});
+        canvas.toBlob(function (blob) {
+            saveAs(blob, "favicon.png");
+        });
     });
-
-    $("#size").on("input", function() {
-        draw();
-    });
-
 
     $.get('https://rawgit.com/FortAwesome/Font-Awesome/master/src/icons.yml', function (data) {
         var parsedYaml = jsyaml.load(data);
@@ -75,7 +54,6 @@ $(window).on('load', function () {
 
             symbols.push(new FASymbol(icon.name, icon.id, icon.unicode, $icon));
         });
-        draw();
 
         $(".icon").on("click", function () {
             symbol = window.getComputedStyle($(this).children().get()[0], ':before').content.substring(1, 2);
@@ -84,14 +62,12 @@ $(window).on('load', function () {
     });
 
 
-
-
     function draw() {
         if (sideLength > 0) {
-            canvas.width = sideLength;
-            canvas.height = sideLength;
+            var color = $("#color").val();
+            var backgroundColor = $("#background_color").val();
             var i = sideLength;
-
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
             ctx.fillStyle = backgroundColor;
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
@@ -101,9 +77,7 @@ $(window).on('load', function () {
                 ctx.font = i + "px FontAwesome";
                 i--;
             } while (ctx.measureText(symbol).width > sideLength);
-
             ctx.font = (i * ($("#size").val() / 100)) + "px FontAwesome";
-
 
 
             ctx.fillStyle = "rgba(0, 0, 0, 1)";
