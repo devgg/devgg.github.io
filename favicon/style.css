@@ -182,11 +182,19 @@ input:focus {
 
 @media screen and (max-width: 420px) {
 
+    #colors {
+        justify-content: center;
+    }
+
     #download {
         width: 80vw;
     }
 
     input {
+        width: 80vw;
+    }
+
+    #size {
         width: 80vw;
     }
 
