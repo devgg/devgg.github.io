@@ -2,7 +2,7 @@ $(document).ready(function () {
     var github = "https://github.com/devgg";
     var linkedin = "https://de.linkedin.com/in/floriangauger";
     var email = "flo.gauger@gmail.com";
-    var resume = "resume.pdf";
+    var resume = "res/resume.pdf";
 
     $("#github").click(function () {
         window.open(github, "_blank");
