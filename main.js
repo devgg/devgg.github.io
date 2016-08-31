@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(window).on("load", function () {
     var github = "https://github.com/devgg";
     var linkedin = "https://de.linkedin.com/in/floriangauger";
     var email = "flo.gauger@gmail.com";
@@ -20,3 +20,6 @@ $(document).ready(function () {
         window.open(resume, "_blank");
     });
 });
+
+
+

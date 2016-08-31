@@ -6,19 +6,41 @@
     <link rel="icon" href="img/favicon.ico">
     <script src="https://use.fontawesome.com/ba0aee172c.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script src="js/analytics.js"></script>
+    <script src="lib/analytics.js"></script>
     <script src="main.js"></script>
 </head>
 <body>
-<div id="main"></div>
+<div id="main">
+    <div id="text_container">
+        <span class="text_big">Hi,</span>
+        <span class="text_small">my name is</span>
+        <span class="text_big">Florian</span>
+    </div>
+    <span class="text_small">I am a</span>
+    <!--<div id="fav" class="circle"></div>-->
+    <!--<div id="flex" class="circle"></div>-->
+</div>
 <div id="footer">
     <div id="social_container">
-        <i id="github" class="fa fa-github"></i>
-        <i id="linkedin" class="fa fa-linkedin"></i>
-        <i id="email" class="fa fa-envelope"></i>
-        <i id="resume" class="fa fa-user"></i>
+        <div class="social" id="github">
+            <i class="fa fa-github social_button"></i>
+            <div class="social_text">GITHUB</div>
+        </div>
+        <div class="social" id="linkedin">
+            <i class="fa fa-linkedin social_button"></i>
+            <div class="social_text">LINKEDIN</div>
+        </div>
+        <div class="social" id="email" >
+            <i class="fa fa-envelope social_button"></i>
+            <div class="social_text">EMAIL</div>
+        </div>
+        <div class="social" id="resume">
+            <i class="fa fa-user social_button"></i>
+            <div class="social_text">RÉSUMÉ</div>
+        </div>
     </div>
 </div>
 </body>
