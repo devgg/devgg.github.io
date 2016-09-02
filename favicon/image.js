@@ -17,11 +17,40 @@ $(window).on('load', function () {
 
 
     $("#size").on("input", draw);
-    $("#color, #background_color").minicolors({
-        change: draw,
-        format: "rgb",
-        opacity: true
+
+    $("#color").spectrum({
+        color: "#ffffff",
+        showButtons: false,
+        showAlpha: true,
+        //change: updateBorders,
+        move: function(color) {
+            var rgba = colorToRgba(color);
+            $(this).css("background-color", rgba);
+            $("#color_text").val(rgba);
+            draw();
+        }
     });
+
+    $("#background_color").spectrum({
+        color: "#f85032",
+        showButtons: false,
+        showAlpha: true,
+        //change: updateBorders,
+        move: function(color) {
+            var rgba = colorToRgba(color);
+            $(this).css("background-color", rgba);
+            $("#background_color_text").val(rgba);
+            draw();
+        }
+    });
+
+    function colorToRgba(color) {
+        return "rgba("
+            + color.toRgb().r  + ", "
+            + color.toRgb().g  + ", "
+            + color.toRgb().b  + ", "
+            + color.toRgb().a  + ")";
+    }
 
     var symbols = [];
     $("#search").on("input", function () {
@@ -59,8 +88,8 @@ $(window).on('load', function () {
 
     function draw() {
         if (sideLength > 0) {
-            var color = $("#color").val();
-            var backgroundColor = $("#background_color").val();
+            var color = $("#color_text").val();
+            var backgroundColor = $("#background_color_text").val();
             var i = sideLength;
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             ctx.fillStyle = backgroundColor;

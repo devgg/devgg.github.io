@@ -9,16 +9,26 @@
         margin-bottom: 10px;
     }
 
+    #controls_container {
+        width: 100%;
+    }
+
     #colors {
         width: 80vw;
         justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .color_input {
+        width: 100%;
     }
 
     #color {
         margin-bottom: 10px;
     }
 
-    #color, #background_color {
+    .color_text {
         width: 80vw;
     }
 
@@ -36,6 +46,7 @@
     }
 
     #search {
+        width: calc(80vw - 10px);
         order: 100;
         margin-bottom: 10px;
     }
