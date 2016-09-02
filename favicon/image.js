@@ -12,7 +12,6 @@ $(window).on('load', function () {
     var sideLength = 1024;
     canvas.width = sideLength;
     canvas.height = sideLength;
-    //canvas.style.webkitFontSmoothing="antialiased";
     var ctx = canvas.getContext('2d');
     draw();
 
@@ -42,26 +41,21 @@ $(window).on('load', function () {
         });
     });
 
-    $.get('https://rawgit.com/FortAwesome/Font-Awesome/master/src/icons.yml', function (data) {
-        var parsedYaml = jsyaml.load(data);
-        var $iconContainer = $('#icon_container');
+    var $iconContainer = $('#icon_container');
+    $.each(icons, function (index, icon) {
+        var $iconOuter = $("<div>").addClass("icon_outer");
+        var $icon = $("<div>").addClass("icon").append($('<i class="fa fa-' + icon.id + '"></i>'));
+        $icon.append($("<div>").addClass("icon_text").text(icon.id));
+        $iconOuter.append($icon);
+        $iconContainer.append($iconOuter);
 
-        $.each(parsedYaml.icons, function (index, icon) {
-            var $iconOuter = $("<div>").addClass("icon_outer");
-            var $icon = $("<div>").addClass("icon").append($('<i class="fa fa-' + icon.id + '"></i>'));
-            $icon.append($("<div>").addClass("icon_text").text(icon.id));
-            $iconOuter.append($icon);
-            $iconContainer.append($iconOuter);
-
-            symbols.push(new FASymbol(icon.name, icon.id, icon.unicode, $icon));
-        });
-
-        $(".icon").on("click", function () {
-            symbol = window.getComputedStyle($(this).children().get()[0], ':before').content.substring(1, 2);
-            draw();
-        });
+        symbols.push(new FASymbol(icon.name, icon.id, icon.unicode, $icon));
     });
 
+    $(".icon").on("click", function () {
+        symbol = window.getComputedStyle($(this).children().get()[0], ':before').content.substring(1, 2);
+        draw();
+    });
 
     function draw() {
         if (sideLength > 0) {
@@ -89,5 +83,12 @@ $(window).on('load', function () {
             ctx.fillText(symbol, sideLength / 2, sideLength / 2);
             canvasToFavicon(canvas);
         }
+    }
+
+    function updateIcons() {
+        $.get('https://rawgit.com/FortAwesome/Font-Awesome/master/src/icons.yml', function (data) {
+            var parsedYaml = jsyaml.load(data);
+            console.log(JSON.stringify(parsedYaml));
+        });
     }
 });

@@ -114,13 +114,13 @@ body {
 
 
 #download {
-    background-color: white;
+    background-color: #EB3349;
     font-size: 14px;
     width: 400px;
     height: 30px;
     border: 1px solid #EB3349;
     border-radius: 5px;
-    color: #EB3349;
+    color: white;
     padding: 0;
     text-align: center;
     line-height: 30px;
@@ -130,8 +130,8 @@ body {
 
 
 #download:hover {
-    background-color: #EB3349;
-    color: white;
+    background-color: white;
+    color: #EB3349;
 }
 
 #download:active {
