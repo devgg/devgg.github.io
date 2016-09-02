@@ -24,7 +24,6 @@ body {
     justify-content: center;
     align-items: center;
     width: 50vw;
-    margin-bottom: 100px;
 }
 
 #icon_container {
@@ -90,7 +89,6 @@ body {
     margin-bottom: 0;
 }
 
-
 .minicolors-theme-default .minicolors-swatch {
     top: 6px;
     border-color: #EB3349;
@@ -104,7 +102,7 @@ body {
 
 #color, #background_color {
     padding-left: 35px;
-    width: 155px;
+    width: 159px;
 }
 
 .color_picker:focus {
@@ -192,37 +190,7 @@ input:focus {
 }
 
 
-@media screen and (max-width: 720px) {
 
-    #colors {
-        justify-content: center;
-    }
-
-    #color {
-        margin-bottom: 10px;
-    }
-
-    #color, #background_color {
-        width: 80vw;
-    }
-
-    #download {
-        width: 80vw;
-    }
-
-    input {
-        width: 80vw;
-    }
-
-    #size {
-        width: 80vw;
-    }
-
-    #icon_container {
-        width: 100vw;
-        justify-content: center;
-    }
-}
 
 
 .icon {

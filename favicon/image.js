@@ -84,11 +84,13 @@ $(window).on('load', function () {
             canvasToFavicon(canvas);
         }
     }
-
-    function updateIcons() {
-        $.get('https://rawgit.com/FortAwesome/Font-Awesome/master/src/icons.yml', function (data) {
-            var parsedYaml = jsyaml.load(data);
-            console.log(JSON.stringify(parsedYaml));
-        });
-    }
 });
+
+
+// used to update the icons
+//function updateIcons() {
+//    $.get('https://rawgit.com/FortAwesome/Font-Awesome/master/src/icons.yml', function (data) {
+//        var parsedYaml = jsyaml.load(data);
+//        console.log(JSON.stringify(parsedYaml));
+//    });
+//}
