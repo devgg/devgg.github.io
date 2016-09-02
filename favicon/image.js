@@ -12,6 +12,7 @@ $(window).on('load', function () {
     var sideLength = 1024;
     canvas.width = sideLength;
     canvas.height = sideLength;
+    //canvas.style.webkitFontSmoothing="antialiased";
     var ctx = canvas.getContext('2d');
     draw();
 
@@ -90,9 +91,3 @@ $(window).on('load', function () {
         }
     }
 });
-
-
-
-
-
-

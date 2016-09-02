@@ -9,7 +9,8 @@
     <script src="https://use.fontawesome.com/ba0aee172c.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
     <link rel="stylesheet" href="lib/jquery.minicolors.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/rangeslider.css">
+    <link rel="stylesheet" href="css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="lib/canvas-to-blob.min.js"></script>
     <script src="lib/FileSaver.min.js"></script>
@@ -20,24 +21,17 @@
     <script src="image.js"></script>
 </head>
 <body>
-<div id="upper">
+<div id="left">
     <canvas id="canvas"></canvas>
     <div id="colors">
         <input id="color" class="color_picker" value="#ffffff">
-        <input id="background_color" class="color_picker" value="#64b3f4">
+        <input id="background_color" class="color_picker" value="#EB3349">
     </div>
-    <input id="size" type="range" min="10" max="100" step="1" value="55" data-orientation="vertical">
+    <input id="size" type="range" min="10" max="100" step="1" value="55" data-orientation="horizontal">
+    <input id="search" type="text" name="search" autocomplete="off" placeholder="Search...">
     <div id="download">download</div>
 </div>
-<div id="lower">
-    <div id="search_container">
-        <input id="search" type="text" name="search" autocomplete="off" placeholder="Search...">
-    </div>
-    <div id="main">
-        <div id="icon_container">
-
-        </div>
-    </div>
+<div id="icon_container">
 </div>
 </body>
 </html>

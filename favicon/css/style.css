@@ -6,7 +6,7 @@
 
 body {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     min-height: 100vh;
 }
 
@@ -18,22 +18,30 @@ body {
 }
 
 
-#upper {
-    width: 100vw;
+#left {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    margin-bottom: 20px;
+    width: 50vw;
+    margin-bottom: 100px;
 }
 
-#lower {
-    width: 100vw;
+#icon_container {
+    width: 50vw;
+    height: 100vh;
     display: flex;
-    flex-direction: column;
-    align-items: center;
     /*background: linear-gradient(0deg, #c2e59c, #64b3f4 100%) no-repeat;*/
-    background-color: #64b3f4;
+    /*background-color: #64b3f4;*/
     flex-grow: 1;
+    overflow:auto;
+    background-color: #EB3349;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+    max-width: 1000px;
+    color: white;
 }
 
 #canvas {
@@ -41,17 +49,9 @@ body {
     width: 100px;
     margin-top: 20px;
     margin-bottom: 20px;
-    background-image: url(img/grid.png);
+    background-image: url(../img/grid.png);
 }
 
-#icon_container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    color: white;
-    max-width: 1000px;
-}
 
 .fa {
     font-size: 30px;
@@ -90,23 +90,25 @@ body {
     margin-bottom: 0;
 }
 
-#color, #background_color {
-    width: 170px;
-}
 
 .minicolors-theme-default .minicolors-swatch {
     top: 6px;
-    border-color: #64b3f4;
+    border-color: #EB3349;
 }
 
 .color_picker {
-    border: 1px solid #64b3f4;
-    color: #64b3f4;
+    border: 1px solid #EB3349;
+    color: #EB3349;
     width: 187px;
 }
 
+#color, #background_color {
+    padding-left: 35px;
+    width: 155px;
+}
+
 .color_picker:focus {
-    box-shadow: 0 0 7px #64b3f4;
+    box-shadow: 0 0 7px #EB3349;
 }
 
 
@@ -116,9 +118,9 @@ body {
     font-size: 14px;
     width: 400px;
     height: 30px;
-    border: 1px solid #64b3f4;
+    border: 1px solid #EB3349;
     border-radius: 5px;
-    color: #64b3f4;
+    color: #EB3349;
     padding: 0;
     text-align: center;
     line-height: 30px;
@@ -128,13 +130,13 @@ body {
 
 
 #download:hover {
-    background-color: #64b3f4;
+    background-color: #EB3349;
     color: white;
 }
 
 #download:active {
     background-color: white;
-    color: #64b3f4;
+    color: #EB3349;
 }
 
 input {
@@ -148,9 +150,14 @@ input {
     outline: none;
     padding: 5px 0 5px 10px;
     background: 0 0;
-    color: #fff;
-    border: 1px solid #fff;
+    color: #EB3349;
+    border: 1px solid #EB3349;
     border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+input:focus {
+    box-shadow: 0 0 7px #fff;
 }
 
 #size {
@@ -159,24 +166,29 @@ input {
     width: 402px;
 }
 
-input:focus {
-    box-shadow: 0 0 7px #fff;
-}
 
 *::-webkit-input-placeholder {
-    color: #EEEEEE;
+    color: #EB3349;
+    opacity: 0.5;
 }
 
 *:-moz-placeholder {
-    color: #EEEEEE;
+    color: #EB3349;
+    opacity: 0.5;
 }
 
 *::-moz-placeholder {
-    color: #EEEEEE;
+    color: #EB3349;
+    opacity: 0.5;
 }
 
 *:-ms-input-placeholder {
-    color: #EEEEEE;
+    color: #EB3349;
+    opacity: 0.5;
+}
+
+.minicolors-swatch-color {
+    cursor: pointer;
 }
 
 
@@ -210,4 +222,47 @@ input:focus {
         width: 100vw;
         justify-content: center;
     }
+}
+
+
+.icon {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+}
+.icon:hover, .icon:focus, .icon:active {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.minicolors-theme-default .minicolors-swatch {
+
+    border: solid;
+    /*border-right: solid;*/
+    border-width: 1px;
+    border-color: #EB3349;
+    top: 0px;
+    left: 0px;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px 0 0 5px;
+}
+
+.minicolors-swatch-color {
+    border: solid;
+    border-color: #EB3349;
+    border-width: 1px;
+    width: 30px;
+    height: 30px;
+    top: -1px;
+
+    border-radius: 5px 0 0 5px;
+    left: -1px;
 }
