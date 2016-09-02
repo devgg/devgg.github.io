@@ -37,12 +37,12 @@
 
     #search {
         order: 100;
-        margin-bottom: 0;
+        margin-bottom: 10px;
     }
 
     #icon_container {
         width: 100%;
         justify-content: center;
-        max-height: calc(100vh - 50px);
+        max-height: calc(100vh - 60px);
     }
 }

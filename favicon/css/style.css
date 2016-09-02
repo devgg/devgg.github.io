@@ -8,6 +8,11 @@ body {
     display: flex;
     flex-direction: row;
     min-height: 100vh;
+
+    background: #f85032; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #f85032 , #e73827); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #f85032 , #e73827); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 #colors {
@@ -24,23 +29,22 @@ body {
     justify-content: center;
     align-items: center;
     width: 50vw;
+    background-color: white;
 }
 
 #icon_container {
     width: 50vw;
     height: 100vh;
     display: flex;
-    /*background: linear-gradient(0deg, #c2e59c, #64b3f4 100%) no-repeat;*/
-    /*background-color: #64b3f4;*/
-    flex-grow: 1;
-    overflow:auto;
-    background-color: #EB3349;
+    overflow: auto;
+    /*background-color: #4A569D;*/
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     align-content: flex-start;
-    max-width: 1000px;
     color: white;
+
+
 }
 
 #canvas {
@@ -91,12 +95,12 @@ body {
 
 .minicolors-theme-default .minicolors-swatch {
     top: 6px;
-    border-color: #EB3349;
+    border-color: #f85032;
 }
 
 .color_picker {
-    border: 1px solid #EB3349;
-    color: #EB3349;
+    border: 1px solid #f85032;
+    color: #f85032;
     width: 187px;
 }
 
@@ -106,17 +110,17 @@ body {
 }
 
 .color_picker:focus {
-    box-shadow: 0 0 7px #EB3349;
+    box-shadow: 0 0 7px #f85032;
 }
 
 
 
 #download {
-    background-color: #EB3349;
+    background-color: #f85032;
     font-size: 14px;
     width: 400px;
     height: 30px;
-    border: 1px solid #EB3349;
+    border: 1px solid #f85032;
     border-radius: 5px;
     color: white;
     padding: 0;
@@ -129,12 +133,12 @@ body {
 
 #download:hover {
     background-color: white;
-    color: #EB3349;
+    color: #f85032;
 }
 
 #download:active {
     background-color: white;
-    color: #EB3349;
+    color: #f85032;
 }
 
 input {
@@ -148,8 +152,8 @@ input {
     outline: none;
     padding: 5px 0 5px 10px;
     background: 0 0;
-    color: #EB3349;
-    border: 1px solid #EB3349;
+    color: #f85032;
+    border: 1px solid #f85032;
     border-radius: 5px;
     margin-bottom: 10px;
 }
@@ -166,22 +170,22 @@ input:focus {
 
 
 *::-webkit-input-placeholder {
-    color: #EB3349;
+    color: #f85032;
     opacity: 0.5;
 }
 
 *:-moz-placeholder {
-    color: #EB3349;
+    color: #f85032;
     opacity: 0.5;
 }
 
 *::-moz-placeholder {
-    color: #EB3349;
+    color: #f85032;
     opacity: 0.5;
 }
 
 *:-ms-input-placeholder {
-    color: #EB3349;
+    color: #f85032;
     opacity: 0.5;
 }
 
@@ -215,7 +219,7 @@ input:focus {
     border: solid;
     /*border-right: solid;*/
     border-width: 1px;
-    border-color: #EB3349;
+    border-color: #f85032;
     top: 0px;
     left: 0px;
     width: 30px;
@@ -225,7 +229,7 @@ input:focus {
 
 .minicolors-swatch-color {
     border: solid;
-    border-color: #EB3349;
+    border-color: #f85032;
     border-width: 1px;
     width: 30px;
     height: 30px;
@@ -234,3 +238,4 @@ input:focus {
     border-radius: 5px 0 0 5px;
     left: -1px;
 }
+
