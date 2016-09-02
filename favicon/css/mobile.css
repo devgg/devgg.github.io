@@ -10,6 +10,7 @@
     }
 
     #colors {
+        width: 80vw;
         justify-content: center;
     }
 
@@ -36,5 +37,6 @@
     #icon_container {
         width: 100%;
         justify-content: center;
+        height: auto;
     }
 }
