@@ -2,27 +2,88 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Florian Gauger</title>
     <link rel="icon" href="img/favicon.ico">
     <script src="https://use.fontawesome.com/ba0aee172c.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/animation.css">
+    <link rel="stylesheet" href="css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="lib/typed.min.js"></script>
     <script src="lib/ga.js"></script>
+    <script src="lib/modernizr.custom.js"></script>
     <script src="main.js"></script>
 </head>
-<body>
-<div id="main">
-    <!--<div id="text_container">-->
-        <!--&lt;!&ndash;<span class="text_big">Hi,</span>&ndash;&gt;-->
-        <!--&lt;!&ndash;<span class="text_small">my name is</span>&ndash;&gt;-->
-        <!--&lt;!&ndash;<span class="text_big">Florian</span>&ndash;&gt;-->
-    <!--</div>-->
-    <!--<span class="text_small">I am a</span>-->
-    <!--<div id="fav" class="circle"></div>-->
-    <!--<div id="flex" class="circle"></div>-->
+<body class="easeOut">
+<div id="main" class="perspective">
+    <div class="page page-1 page-current">
+        <div class="navigation navigation_left"></div>
+        <div class="main_content">Hello</div>
+        <div class="navigation navigation_right"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+    </div>
+    <div class="page page-2">
+        <div class="navigation navigation_left"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
+        <div class="main_content">Hello</div>
+        <div class="navigation navigation_right"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+    </div>
+    <div class="page page-3">
+        <div class="navigation navigation_left"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
+        <div class="main_content">
+            <!--<div class="company_row">-->
+                <!--<img src="img/logo_lumo.jpg">-->
+                <!--<div class="company_text">-->
+                    <!--In charge of designing and developing a full stack application for a German bus manufacturer.-->
+                    <!--Responsible for technical consulting and customer training.-->
+                <!--</div>-->
+            <!--</div>-->
+            <div class="company_row">
+                <img src="img/logo_sa.svg">
+                <div class="company_text">
+                    Worked in a small team on a new application for CDS developers.
+                    Responsible for development of the core functionality.
+                    Added new features based on user feedback improving the applications utility.
+                </div>
+            </div>
+            <div class="company_row">
+                <img src="img/logo_sa.svg">
+                <div class="company_text">
+                    Designed and implemented part of the XSDS core functionality.
+                    Created framework for unit and performance testing of XSDS modules.
+                </div>
+            </div>
+            <div class="company_row">
+                <img src="img/logo_ki.svg">
+                <div class="company_text">
+                    Conducted a weekly tutorial on the basic notions of computer science with a group of 25 students.
+                </div>
+            </div>
+            <div class="company_row">
+                <img src="img/logo_ch.svg">
+                <div class="company_text">
+                    Worked as a volunteer for one year in a shared living project at a school for children with special needs.
+                    Helped to provide shelter for students by building a bus stop.
+                </div>
+            </div>
+        </div>
+        <div class="navigation navigation_right"></div>
+    </div>
 </div>
+<!-- ... -->
+<!--<div id="next_container">-->
+<!--<span>Hi, I am Florian:&nbsp;</span>-->
+<!--<div id="next">-->
+<!--</div>-->
+<!--</div>-->
+<!--<div id="text_container">-->
+<!--&lt;!&ndash;<span class="text_big">Hi,</span>&ndash;&gt;-->
+<!--&lt;!&ndash;<span class="text_small">my name is</span>&ndash;&gt;-->
+<!--&lt;!&ndash;<span class="text_big">Florian</span>&ndash;&gt;-->
+<!--</div>-->
+<!--<span class="text_small">I am a</span>-->
+<!--<div id="fav" class="circle"></div>-->
+<!--<div id="flex" class="circle"></div>-->
 <div id="footer">
     <div id="social_container">
         <div class="social" id="github">
@@ -33,7 +94,7 @@
             <i class="fa fa-linkedin social_button"></i>
             <div class="social_text">LINKEDIN</div>
         </div>
-        <div class="social" id="email" >
+        <div class="social" id="email">
             <i class="fa fa-envelope social_button"></i>
             <div class="social_text">EMAIL</div>
         </div>
