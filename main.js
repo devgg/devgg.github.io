@@ -47,16 +47,16 @@ $(window).on("load", function () {
     //    }
     //}
 
-    animEndEventNames = {
+    var animEndEventNames = {
         'WebkitAnimation': 'webkitAnimationEnd',
         'OAnimation': 'oAnimationEnd',
         'msAnimation': 'MSAnimationEnd',
         'animation': 'animationend'
-    },
+    };
         // animation end event name
-        animEndEventName = animEndEventNames[Modernizr.prefixed('animation')],
+    var animEndEventName = animEndEventNames[Modernizr.prefixed('animation')];
         // support css animations
-        support = Modernizr.cssanimations
+    var support = Modernizr.cssanimations;
 
 
     $(".navigation_right").click(changePage.bind(changePage, true));
