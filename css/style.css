@@ -224,6 +224,16 @@ body {
     background-color: #7bb7fa;
 }
 
+.page-1 > .main_content {
+    flex-direction: row;
+    align-items: baseline;
+}
+
+.text_hand {
+    font-family: 'Tangerine', cursive;
+    font-size: 60px;
+}
+
 .page-2 {
     background-color: #60d7a9;
 }
