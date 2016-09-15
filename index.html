@@ -7,8 +7,8 @@
     <link rel="icon" href="img/favicon.ico">
     <script src="https://use.fontawesome.com/ba0aee172c.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Tangerine" rel="stylesheet">
+    <!--<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">-->
+    <!--<link href="https://fonts.googleapis.com/css?family=Tangerine" rel="stylesheet">-->
     <link rel="stylesheet" href="css/animation.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -16,23 +16,41 @@
     <script src="lib/ga.js"></script>
     <script src="lib/modernizr.custom.js"></script>
     <script src="main.js"></script>
+    <!--<script src="//d3js.org/d3.v4.min.js"></script>-->
+    <!--<script src="lib/d3.min.js"></script>-->
+
+
 </head>
 <body class="easeOut">
 <div id="main" class="perspective">
     <div class="page page-1 page-current">
-        <div class="navigation navigation_left"></div>
+        <div class="navigation navigation_left hover"></div>
         <div class="main_content">
-            <span class="text_hand">Hi!</span><span>my name is</span><span class="text_hand">Florian</span>
+            <div id="line2">
+                <span id="text1"></span>
+                <span id="text2"></span>
+                <span id="text3"></span>
+            </div>
         </div>
-        <div class="navigation navigation_right"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+        <div class="navigation navigation_right hover"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
     </div>
     <div class="page page-2">
-        <div class="navigation navigation_left"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
-        <div class="main_content">Hello</div>
-        <div class="navigation navigation_right"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+        <div class="navigation navigation_left hover"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
+        <div class="main_content">
+            Skills
+            <!--<button>sdkjn</button>-->
+            <!--<div class="circle"><img src="img/logo_js.svg"></div>-->
+            <!--<div class="circle"><img src="img/logo_java.svg"></div>-->
+            <!--<div class="circle"><img src="img/logo_cpp.svg"></div>-->
+            <!--<div class="circle"><img src="img/logo_html.svg"></div>-->
+            <!--<div class="circle"><img src="img/logo_css.svg"></div>-->
+            <!--<div class="circle"><img src="img/logo_git.svg"></div>-->
+            <!--<div class="skills_container"></div>-->
+        </div>
+        <div class="navigation navigation_right hover"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
     </div>
     <div class="page page-3">
-        <div class="navigation navigation_left"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
+        <div class="navigation navigation_left hover"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
         <div class="main_content">
             <!--<div class="company_row">-->
                 <!--<img src="img/logo_lumo.jpg">-->
@@ -70,7 +88,7 @@
                 </div>
             </div>
         </div>
-        <div class="navigation navigation_right"></div>
+        <div class="navigation navigation_right hover"></div>
     </div>
 </div>
 <!-- ... -->
@@ -89,21 +107,21 @@
 <!--<div id="flex" class="circle"></div>-->
 <div id="footer">
     <div id="social_container">
-        <div class="social" id="github">
+        <div class="social hover" id="github">
             <i class="fa fa-github social_button"></i>
-            <div class="social_text">GITHUB</div>
+            <!--<div class="social_text">GITHUB</div>-->
         </div>
-        <div class="social" id="linkedin">
+        <div class="social hover" id="linkedin">
             <i class="fa fa-linkedin social_button"></i>
-            <div class="social_text">LINKEDIN</div>
+            <!--<div class="social_text">LINKEDIN</div>-->
         </div>
-        <div class="social" id="email">
+        <div class="social hover" id="email">
             <i class="fa fa-envelope social_button"></i>
-            <div class="social_text">EMAIL</div>
+            <!--<div class="social_text">EMAIL</div>-->
         </div>
-        <div class="social" id="resume">
+        <div class="social hover" id="resume">
             <i class="fa fa-user social_button"></i>
-            <div class="social_text">RÉSUMÉ</div>
+            <!--<div class="social_text">RÉSUMÉ</div>-->
         </div>
     </div>
 </div>
