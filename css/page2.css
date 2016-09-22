@@ -1,13 +1,13 @@
-.page-2 {
+.page2 {
     flex-direction: column;
     color: black;
 }
 
-.page-2 .above_header {
+.page2 .above_header {
     /*background-color: rgba(255, 255, 255, 0.8);*/
 }
 
-.page-2 .header {
+.page2 .header {
     /*background-color: rgba(0, 0, 0, 0.5);*/
     color: white;
 
@@ -16,12 +16,12 @@
 }
 
 
-.page-2 .main {
+.page2 .main {
     background-color: rgba(255, 255, 255, 0.8);
 }
 
 
-.page-2 .navigation {
+.page2 .navigation {
     color: black;
 }
 
