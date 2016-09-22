@@ -6,9 +6,10 @@
     <title>Florian Gauger</title>
     <link rel="icon" href="img/favicon.ico">
     <script src="https://use.fontawesome.com/ba0aee172c.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400" rel="stylesheet">
     <!--<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">-->
     <!--<link href="https://fonts.googleapis.com/css?family=Tangerine" rel="stylesheet">-->
+    <link href="https://fonts.googleapis.com/css?family=Nothing+You+Could+Do" rel="stylesheet">
     <link rel="stylesheet" href="css/animation.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -22,8 +23,16 @@
 
 </head>
 <body class="easeOut">
+<div id="head">
+    <div class="navigation_menu_button current">HOME</div>
+    <div class="navigation_menu_button">SKILLS</div>
+    <div class="navigation_menu_button">EXPERIENCE</div>
+    <!--<div class="head_but current"><i class="fa fa-home" aria-hidden="true"></i>Home</div>-->
+    <!--<div class="head_but"><i class="fa fa-code" aria-hidden="true"></i>Skill</div>-->
+    <!--<div class="head_but"><i class="fa fa-briefcase" aria-hidden="true"></i>Experience</div>-->
+</div>
 <div id="main" class="perspective">
-    <div class="page page-1 page-current">
+    <section class="page page-1 page-current">
         <div class="navigation navigation_left hover"></div>
         <div class="main_content">
             <div id="line2">
@@ -33,63 +42,296 @@
             </div>
         </div>
         <div class="navigation navigation_right hover"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
-    </div>
-    <div class="page page-2">
-        <div class="navigation navigation_left hover"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
-        <div class="main_content">
-            Skills
-            <!--<button>sdkjn</button>-->
-            <!--<div class="circle"><img src="img/logo_js.svg"></div>-->
-            <!--<div class="circle"><img src="img/logo_java.svg"></div>-->
-            <!--<div class="circle"><img src="img/logo_cpp.svg"></div>-->
-            <!--<div class="circle"><img src="img/logo_html.svg"></div>-->
-            <!--<div class="circle"><img src="img/logo_css.svg"></div>-->
-            <!--<div class="circle"><img src="img/logo_git.svg"></div>-->
-            <!--<div class="skills_container"></div>-->
+    </section>
+    <section class="page page-2">
+        <!--<div class="above_header"></div>-->
+        <div id="skill_header">I always strife to expand my knowledge. Click on a <span id="default_skill_button"
+                                                                                        class="emphasis_color">skill</span>
+            to learn more.
         </div>
-        <div class="navigation navigation_right hover"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
-    </div>
-    <div class="page page-3">
-        <div class="navigation navigation_left hover"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
-        <div class="main_content">
-            <!--<div class="company_row">-->
+        <div class="main">
+            <div class="navigation navigation_left hover"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
+            <div class="main_content">
+                <div class="skills_column_container">
+                    <div class="column">
+                        <div id="default_skill" class="skill">
+                            <div class="skill_name">Java</div>
+                            <div class="skill_rating">
+                                <i class="fa fa-circle-thin"></i>
+                                <i class="fa fa-circle"></i>
+                                <i class="fa fa-circle"></i>
+                                <i class="fa fa-circle"></i>
+                                <i class="fa fa-circle"></i>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill_name">JavaScript</div>
+                            <div class="skill_rating">
+                                <i class="fa fa-circle-thin"></i>
+                                <i class="fa fa-circle"></i>
+                                <i class="fa fa-circle"></i>
+                                <i class="fa fa-circle"></i>
+                                <i class="fa fa-circle"></i>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill_name">C++</div>
+                            <div class="skill_rating">
+                                <i class="fa fa-circle-thin"></i>
+                                <i class="fa fa-circle"></i>
+                                <i class="fa fa-circle"></i>
+                                <i class="fa fa-circle"></i>
+                                <i class="fa fa-circle"></i>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill_name">OpenGL</div>
+                            <div class="skill_rating">
+                                <i class="fa fa-circle-thin"></i>
+                                <i class="fa fa-circle-thin"></i>
+                                <i class="fa fa-circle"></i>
+                                <i class="fa fa-circle"></i>
+                                <i class="fa fa-circle"></i>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill_name">OpenCL</div>
+                            <div class="skill_rating">
+                                <i class="fa fa-circle-thin"></i>
+                                <i class="fa fa-circle-thin"></i>
+                                <i class="fa fa-circle"></i>
+                                <i class="fa fa-circle"></i>
+                                <i class="fa fa-circle"></i>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill_name">Scala</div>
+                            <div class="skill_rating">
+                                <i class="fa fa-circle-thin"></i>
+                                <i class="fa fa-circle-thin"></i>
+                                <i class="fa fa-circle"></i>
+                                <i class="fa fa-circle"></i>
+                                <i class="fa fa-circle"></i>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill_name">SQL</div>
+                            <div class="skill_rating">
+                                <i class="fa fa-circle-thin"></i>
+                                <i class="fa fa-circle-thin"></i>
+                                <i class="fa fa-circle"></i>
+                                <i class="fa fa-circle"></i>
+                                <i class="fa fa-circle"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="column">
+                        <div class="skill">
+                            <div class="skill_name">IntelliJ IDEA</div>
+                            <div class="skill_rating">
+                                <i class="fa fa-circle-thin"></i>
+                                <i class="fa fa-circle"></i>
+                                <i class="fa fa-circle"></i>
+                                <i class="fa fa-circle"></i>
+                                <i class="fa fa-circle"></i>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill_name">Visual Studio</div>
+                            <div class="skill_rating">
+                                <i class="fa fa-circle-thin"></i>
+                                <i class="fa fa-circle"></i>
+                                <i class="fa fa-circle"></i>
+                                <i class="fa fa-circle"></i>
+                                <i class="fa fa-circle"></i>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill_name">Git</div>
+                            <div class="skill_rating">
+                                <i class="fa fa-circle-thin"></i>
+                                <i class="fa fa-circle"></i>
+                                <i class="fa fa-circle"></i>
+                                <i class="fa fa-circle"></i>
+                                <i class="fa fa-circle"></i>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill_name">Gradle</div>
+                            <div class="skill_rating">
+                                <i class="fa fa-circle-thin"></i>
+                                <i class="fa fa-circle-thin"></i>
+                                <i class="fa fa-circle"></i>
+                                <i class="fa fa-circle"></i>
+                                <i class="fa fa-circle"></i>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill_name">Maven</div>
+                            <div class="skill_rating">
+                                <i class="fa fa-circle-thin"></i>
+                                <i class="fa fa-circle-thin"></i>
+                                <i class="fa fa-circle"></i>
+                                <i class="fa fa-circle"></i>
+                                <i class="fa fa-circle"></i>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill_name">Scala</div>
+                            <div class="skill_rating">
+                                <i class="fa fa-circle-thin"></i>
+                                <i class="fa fa-circle-thin"></i>
+                                <i class="fa fa-circle"></i>
+                                <i class="fa fa-circle"></i>
+                                <i class="fa fa-circle"></i>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill_name">jQuery</div>
+                            <div class="skill_rating">
+                                <i class="fa fa-circle-thin"></i>
+                                <i class="fa fa-circle-thin"></i>
+                                <i class="fa fa-circle"></i>
+                                <i class="fa fa-circle"></i>
+                                <i class="fa fa-circle"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="column">
+                        <div class="skill">
+                            <div class="skill_name">HTML</div>
+                            <div class="skill_rating">
+                                <i class="fa fa-circle-thin"></i>
+                                <i class="fa fa-circle"></i>
+                                <i class="fa fa-circle"></i>
+                                <i class="fa fa-circle"></i>
+                                <i class="fa fa-circle"></i>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill_name">CSS</div>
+                            <div class="skill_rating">
+                                <i class="fa fa-circle-thin"></i>
+                                <i class="fa fa-circle"></i>
+                                <i class="fa fa-circle"></i>
+                                <i class="fa fa-circle"></i>
+                                <i class="fa fa-circle"></i>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill_name">JUnit</div>
+                            <div class="skill_rating">
+                                <i class="fa fa-circle-thin"></i>
+                                <i class="fa fa-circle"></i>
+                                <i class="fa fa-circle"></i>
+                                <i class="fa fa-circle"></i>
+                                <i class="fa fa-circle"></i>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill_name">Haskell</div>
+                            <div class="skill_rating">
+                                <i class="fa fa-circle-thin"></i>
+                                <i class="fa fa-circle-thin"></i>
+                                <i class="fa fa-circle"></i>
+                                <i class="fa fa-circle"></i>
+                                <i class="fa fa-circle"></i>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill_name">R</div>
+                            <div class="skill_rating">
+                                <i class="fa fa-circle-thin"></i>
+                                <i class="fa fa-circle-thin"></i>
+                                <i class="fa fa-circle"></i>
+                                <i class="fa fa-circle"></i>
+                                <i class="fa fa-circle"></i>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill_name">Matlab</div>
+                            <div class="skill_rating">
+                                <i class="fa fa-circle-thin"></i>
+                                <i class="fa fa-circle-thin"></i>
+                                <i class="fa fa-circle"></i>
+                                <i class="fa fa-circle"></i>
+                                <i class="fa fa-circle"></i>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill_name">Swift</div>
+                            <div class="skill_rating">
+                                <i class="fa fa-circle-thin"></i>
+                                <i class="fa fa-circle-thin"></i>
+                                <i class="fa fa-circle"></i>
+                                <i class="fa fa-circle"></i>
+                                <i class="fa fa-circle"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--<button>sdkjn</button>-->
+                <!--<div class="circle"><img src="img/logo_js.svg"></div>-->
+                <!--<div class="circle"><img src="img/logo_java.svg"></div>-->
+                <!--<div class="circle"><img src="img/logo_cpp.svg"></div>-->
+                <!--<div class="circle"><img src="img/logo_html.svg"></div>-->
+                <!--<div class="circle"><img src="img/logo_css.svg"></div>-->
+                <!--<div class="circle"><img src="img/logo_git.svg"></div>-->
+                <!--<div class="skills_container"></div>-->
+            </div>
+            <div class="navigation navigation_right hover"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+        </div>
+    </section>
+    <section class="page page-3">
+        <div class="above_header"></div>
+        <div class="header">Skills</div>
+        <div class="main">
+            <div class="navigation navigation_left hover"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
+            <div class="main_content">
+                <!--<div class="company_row">-->
                 <!--<img src="img/logo_lumo.jpg">-->
                 <!--<div class="company_text">-->
-                    <!--In charge of designing and developing a full stack application for a German bus manufacturer.-->
-                    <!--Responsible for technical consulting and customer training.-->
+                <!--In charge of designing and developing a full stack application for a German bus manufacturer.-->
+                <!--Responsible for technical consulting and customer training.-->
                 <!--</div>-->
-            <!--</div>-->
-            <div class="company_row">
-                <img src="img/logo_sa.svg">
-                <div class="company_text">
-                    Worked in a small team on a new application for CDS developers.
-                    Responsible for development of the core functionality.
-                    Added new features based on user feedback improving the applications utility.
+                <!--</div>-->
+                <div class="company_row">
+                    <img src="img/logo_sa.svg">
+                    <div class="company_text">
+                        Worked in a small team on a new application for CDS developers.
+                        Responsible for development of the core functionality.
+                        Added new features based on user feedback improving the applications utility.
+                    </div>
+                </div>
+                <div class="company_row">
+                    <img src="img/logo_sa.svg">
+                    <div class="company_text">
+                        Designed and implemented part of the XSDS core functionality.
+                        Created framework for unit and performance testing of XSDS modules.
+                    </div>
+                </div>
+                <div class="company_row">
+                    <img src="img/logo_ki.svg">
+                    <div class="company_text">
+                        Conducted a weekly tutorial on the basic notions of computer science with a group of 25
+                        students.
+                    </div>
+                </div>
+                <div class="company_row">
+                    <img src="img/logo_ch.svg">
+                    <div class="company_text">
+                        Worked as a volunteer for one year in a shared living project at a school for children with
+                        special
+                        needs.
+                        Helped to provide shelter for students by building a bus stop.
+                    </div>
                 </div>
             </div>
-            <div class="company_row">
-                <img src="img/logo_sa.svg">
-                <div class="company_text">
-                    Designed and implemented part of the XSDS core functionality.
-                    Created framework for unit and performance testing of XSDS modules.
-                </div>
-            </div>
-            <div class="company_row">
-                <img src="img/logo_ki.svg">
-                <div class="company_text">
-                    Conducted a weekly tutorial on the basic notions of computer science with a group of 25 students.
-                </div>
-            </div>
-            <div class="company_row">
-                <img src="img/logo_ch.svg">
-                <div class="company_text">
-                    Worked as a volunteer for one year in a shared living project at a school for children with special needs.
-                    Helped to provide shelter for students by building a bus stop.
-                </div>
-            </div>
+            <div class="navigation navigation_right hover"></div>
         </div>
-        <div class="navigation navigation_right hover"></div>
-    </div>
+    </section>
 </div>
 <!-- ... -->
 <!--<div id="next_container">-->

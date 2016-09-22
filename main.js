@@ -6,20 +6,70 @@ $(window).on("load", function () {
 
     $("#github").click(function () {
         window.open(github, "_blank");
+        event.stopPropagation()
     });
 
     $("#linkedin").click(function () {
         window.open(linkedin, "_blank");
+        event.stopPropagation()
     });
 
     $("#email").click(function () {
         window.location.href = "mailto:" + email;
+        event.stopPropagation()
     });
 
     $("#resume").click(function () {
         window.open(resume, "_blank");
+        event.stopPropagation()
     });
 
+    var $skills = $(".skill");
+    $("#default_skill_button").click(function (event) {
+        changeSkillTo($skills.eq(Math.floor(Math.random() * $skills.length)));
+        event.stopPropagation();
+    });
+
+
+
+    var $currentSkill;
+
+    $skills.click(function (event) {
+        changeSkillTo($(this));
+        event.stopPropagation();
+    });
+
+    $("html").click(contractCurrentSkill);
+
+    function changeSkillTo($skill) {
+        contractCurrentSkill();
+        if (!$skill.is($currentSkill)) {
+            $currentSkill = $skill;
+            expandCurrentSkill();
+        } else {
+            $currentSkill = undefined;
+        }
+    }
+
+    function expandCurrentSkill() {
+        $currentSkill.stop();
+        $currentSkill
+            .animate({height: "200px"}, 300)
+            .css("padding", "5px 20px")
+            .css("background-color", "rgba(243, 74, 83, 0.8)");
+        $currentSkill.children().css("color", "white");
+    }
+
+    function contractCurrentSkill() {
+        if ($currentSkill) {
+            $currentSkill.stop();
+            $currentSkill
+                .animate({height: "16px"}, 300)
+                .css("padding", "")
+                .css("background-color", "");
+            $currentSkill.children().css("color", "");
+        }
+    }
 
     $(function () {
         $("#text1").typed({
@@ -53,18 +103,32 @@ $(window).on("load", function () {
     // support css animations
     var support = Modernizr.cssanimations;
 
+    var $navigation_menu_buttons = $(".navigation_menu_button");
+    $navigation_menu_buttons.click(function() {
+        var nextPage = $navigation_menu_buttons.index(this)
+        if (nextPage !== currentPage) {
 
-    $(".navigation_right").click(changePage.bind(changePage, true));
-    $(".navigation_left").click(changePage.bind(changePage, false));
+            changePage(nextPage);
+        }
+    });
+
+    $(".navigation_left").click(function(event) {
+        changePage(currentPage - 1);
+        event.stopPropagation();
+    });
+    $(".navigation_right").click(function(event) {
+        changePage(currentPage + 1);
+        event.stopPropagation();
+    });
 
 
     $(document).keydown(function (e) {
         switch (e.which) {
             case 37:
-                changePage(false);
+                changePage(currentPage - 1);
                 break;
             case 39:
-                changePage(true);
+                changePage(currentPage + 1);
                 break;
         }
         e.preventDefault();
@@ -84,15 +148,18 @@ $(window).on("load", function () {
     var nextInClass = 'page-moveFromRight page-delay200 page-ontop';
 
 
-    function changePage(next) {
-        if (!animating && ((!next && currentPage > 0) || (next && currentPage < $pages.length - 1))) {
+    function changePage(nextPage) {
+        if (!animating && nextPage >= 0 && nextPage < $pages.length) {
             animating = true;
             var $current = $pages.eq(currentPage);
-            currentPage += next ? 1 : -1;
-            var $next = $pages.eq(currentPage);
+            var $next = $pages.eq(nextPage);
 
-            var outClass = next ? nextOutClass : prevOutClass;
-            var inClass = next ? nextInClass : prevInClass;
+            $navigation_menu_buttons.eq(currentPage).removeClass("current");
+            $navigation_menu_buttons.eq(nextPage).addClass("current");
+
+            var outClass = nextPage > currentPage ? nextOutClass : prevOutClass;
+            var inClass = nextPage > currentPage ? nextInClass : prevInClass;
+            currentPage = nextPage;
 
             //$("#footer").css("background-color", footerColors[currentPage]);
             var firstCallback = true;
@@ -110,7 +177,6 @@ $(window).on("load", function () {
             }
         }
     }
-
 
 
     //var $skills_container = $(".skills_container");

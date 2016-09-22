@@ -263,3 +263,16 @@
         opacity: 1;
     }
 }
+
+
+@keyframes spaceing {
+    0% {
+        letter-spacing: 0;
+    }
+    /*50% {*/
+        /*letter-spacing: 1px;*/
+    /*}*/
+    100% {
+        letter-spacing: 1px;
+    }
+}
