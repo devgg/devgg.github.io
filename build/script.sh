@@ -17,7 +17,7 @@ git clone git@github.com:devgg/devgg.git out
 cd out
 git config user.name "Travis CI"
 git config user.email "$COMMIT_AUTHOR_EMAIL"
-git checkout -b gh-pages || git checkout --orphan gh-pages
+git checkout -b gh-pages origin/gh-pages
 cd ..
 
 cp -r out/.git tmp
