@@ -16,5 +16,4 @@ mkdir build/js/
 cleancss css/main.css -o build/css/main.css
 uglifyjs js/main.js -o build/js/main.js
 
-STR="Hello World!"
-echo $STR
+ls -LR
