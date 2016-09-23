@@ -24,10 +24,13 @@ cp -r out/.git tmp
 rm -rf out/**/* || exit 0
 cp -r tmp out/.git
 
+
 rsync -av --exclude='.git' \
           --exclude='css' \
           --exclude='js' \
           --exclude='build' \
+          --exclude='out' \
+          --exclude='tmp' \
           --exclude='.travis.yml' \
           --exclude='.gitignore' \
           . out/
