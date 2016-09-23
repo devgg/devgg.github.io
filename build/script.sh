@@ -1,5 +1,14 @@
 #!/bin/bash
 
+ENCRYPTED_KEY_VAR="encrypted_2f5895d43ae4_key"
+ENCRYPTED_IV_VAR="encrypted_2f5895d43ae4_iv"
+ENCRYPTED_KEY=${!ENCRYPTED_KEY_VAR}
+ENCRYPTED_IV=${!ENCRYPTED_IV_VAR}
+openssl aes-256-cbc -K $ENCRYPTED_KEY -iv $ENCRYPTED_IV -in build/deploy_key.enc -out build/deploy_key -d
+chmod 600 build/deploy_key
+eval `ssh-agent -s`
+ssh-add build/deploy_key
+
 npm install -g clean-css
 npm install -g uglify-js
 
@@ -29,15 +38,6 @@ mkdir out/css
 mkdir out/js
 cleancss css/main.css -o out/css/main.css
 uglifyjs js/main.js -o out/js/main.js
-
-ENCRYPTED_KEY_VAR="encrypted_2f5895d43ae4_key"
-ENCRYPTED_IV_VAR="encrypted_2f5895d43ae4_iv"
-ENCRYPTED_KEY=${!ENCRYPTED_KEY_VAR}
-ENCRYPTED_IV=${!ENCRYPTED_IV_VAR}
-openssl aes-256-cbc -K $ENCRYPTED_KEY -iv $ENCRYPTED_IV -in build/deploy_key.enc -out build/deploy_key -d
-chmod 600 build/deploy_key
-eval `ssh-agent -s`
-ssh-add build/deploy_key
 
 cd out
 git add -A
