@@ -12,11 +12,11 @@ ssh-add build/deploy_key
 npm install -g clean-css
 npm install -g uglify-js
 
-git config user.name "Travis CI"
-git config user.email "$COMMIT_AUTHOR_EMAIL"
 
 git clone git@github.com:devgg/devgg.git out
 cd out
+git config user.name "Travis CI"
+git config user.email "$COMMIT_AUTHOR_EMAIL"
 git checkout -b gh-pages || git checkout --orphan gh-pages
 cd ..
 
