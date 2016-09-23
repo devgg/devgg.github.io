@@ -37,4 +37,5 @@ cd build
 git add -A
 SHA=`git rev-parse --verify HEAD`
 git commit -m "Deploy to GitHub Pages: ${SHA}"
+git remote set-url origin git@github.com:devgg/devgg.git
 git push origin gh-pages
