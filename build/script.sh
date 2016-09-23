@@ -21,7 +21,8 @@ git checkout -b gh-pages origin/gh-pages
 cd ..
 
 cp -r out/.git tmp
-rm -rf out/**/* || exit 0
+rm -rf out
+mkdir out
 cp -r tmp out/.git
 
 
