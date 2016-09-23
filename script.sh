@@ -1,7 +1,6 @@
 #!/bin/bash
 
-gem install uglifier
-ruby build.rb
+npm install -g uglify-js
 
 STR="Hello World!"
 echo $STR
