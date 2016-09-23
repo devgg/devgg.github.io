@@ -24,11 +24,17 @@ mkdir build/js
 cleancss css/main.css -o build/css/main.css
 uglifyjs js/main.js -o build/js/main.js
 
+ENCRYPTED_KEY_VAR="encrypted_0a6446eb3ae3_key"
+ENCRYPTED_IV_VAR="encrypted_0a6446eb3ae3_iv"
+ENCRYPTED_KEY=${!ENCRYPTED_KEY_VAR}
+ENCRYPTED_IV=${!ENCRYPTED_IV_VAR}
+openssl aes-256-cbc -K $ENCRYPTED_KEY -iv $ENCRYPTED_IV -in deploy_key.enc -out deploy_key -d
+chmod 600 deploy_key
+eval `ssh-agent -s`
+ssh-add deploy_key
+
 cd build
 git add -A
 SHA=`git rev-parse --verify HEAD`
 git commit -m "Deploy to GitHub Pages: ${SHA}"
-
 git push origin gh-pages
-
-ls -LR build
