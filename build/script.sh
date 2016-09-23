@@ -3,37 +3,37 @@
 npm install -g clean-css
 npm install -g uglify-js
 
-mkdir build
-cd build
+mkdir out
+cd out
 git config user.name "Travis CI"
 git config user.email "$COMMIT_AUTHOR_EMAIL"
 
 git checkout -b gh-pages || git checkout --orphan gh-pages
-rm -rf build/**/* || exit 0
+rm -rf out/**/* || exit 0
 
 cd ..
 rsync -av --exclude='css/' \
           --exclude='js/' \
+          --exclude='build/' \
           --exclude='.travis.yml' \
           --exclude='.gitignore' \
-          --exclude='script.sh' \
-          . build/
+          . out/
 
-mkdir build/css
-mkdir build/js
-cleancss css/main.css -o build/css/main.css
-uglifyjs js/main.js -o build/js/main.js
+mkdir out/css
+mkdir out/js
+cleancss css/main.css -o out/css/main.css
+uglifyjs js/main.js -o out/js/main.js
 
 ENCRYPTED_KEY_VAR="encrypted_2f5895d43ae4_key"
 ENCRYPTED_IV_VAR="encrypted_2f5895d43ae4_iv"
 ENCRYPTED_KEY=${!ENCRYPTED_KEY_VAR}
 ENCRYPTED_IV=${!ENCRYPTED_IV_VAR}
-openssl aes-256-cbc -K $ENCRYPTED_KEY -iv $ENCRYPTED_IV -in deploy_key.enc -out deploy_key -d
-chmod 600 deploy_key
+openssl aes-256-cbc -K $ENCRYPTED_KEY -iv $ENCRYPTED_IV -in build/deploy_key.enc -out build/deploy_key -d
+chmod 600 build/deploy_key
 eval `ssh-agent -s`
-ssh-add deploy_key
+ssh-add build/deploy_key
 
-cd build
+cd out
 git add -A
 SHA=`git rev-parse --verify HEAD`
 git commit -m "Deploy to GitHub Pages: ${SHA}"
