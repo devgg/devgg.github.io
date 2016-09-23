@@ -24,8 +24,8 @@ mkdir build/js
 cleancss css/main.css -o build/css/main.css
 uglifyjs js/main.js -o build/js/main.js
 
-ENCRYPTED_KEY_VAR="encrypted_0a6446eb3ae3_key"
-ENCRYPTED_IV_VAR="encrypted_0a6446eb3ae3_iv"
+ENCRYPTED_KEY_VAR="encrypted_2f5895d43ae4_key"
+ENCRYPTED_IV_VAR="encrypted_2f5895d43ae4_iv"
 ENCRYPTED_KEY=${!ENCRYPTED_KEY_VAR}
 ENCRYPTED_IV=${!ENCRYPTED_IV_VAR}
 openssl aes-256-cbc -K $ENCRYPTED_KEY -iv $ENCRYPTED_IV -in deploy_key.enc -out deploy_key -d
