@@ -8,13 +8,19 @@ cd out
 git config user.name "Travis CI"
 git config user.email "$COMMIT_AUTHOR_EMAIL"
 
+git clone git@github.com:devgg/devgg.git out
 git checkout -b gh-pages || git checkout --orphan gh-pages
+
+cp -r out/.git tmp
 rm -rf out/**/* || exit 0
+mkdir out
+cp -r tmp out/.git
 
 cd ..
-rsync -av --exclude='css/' \
-          --exclude='js/' \
-          --exclude='build/' \
+rsync -av --exclude='.git' \
+          --exclude='css' \
+          --exclude='js' \
+          --exclude='build' \
           --exclude='.travis.yml' \
           --exclude='.gitignore' \
           . out/
