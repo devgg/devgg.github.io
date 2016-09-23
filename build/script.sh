@@ -33,6 +33,7 @@ rsync -av --exclude='.git' \
           --exclude='tmp' \
           --exclude='.travis.yml' \
           --exclude='.gitignore' \
+          --exclude='deploy_key.enc' \
           . out/
 
 mkdir out/css
