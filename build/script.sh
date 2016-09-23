@@ -24,7 +24,6 @@ cp -r out/.git tmp
 rm -rf out/**/* || exit 0
 cp -r tmp out/.git
 
-cd ..
 rsync -av --exclude='.git' \
           --exclude='css' \
           --exclude='js' \
