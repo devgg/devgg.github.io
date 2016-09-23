@@ -30,10 +30,6 @@ $(window).on("load", function () {
         event.stopPropagation();
     });
 
-
-
-    var $currentSkill;
-
     $skills.click(function (event) {
         changeSkillTo($(this));
         event.stopPropagation();
@@ -41,6 +37,7 @@ $(window).on("load", function () {
 
     $("html").click(contractCurrentSkill);
 
+    var $currentSkill;
     function changeSkillTo($skill) {
         contractCurrentSkill();
         if (!$skill.is($currentSkill)) {
@@ -92,22 +89,10 @@ $(window).on("load", function () {
         });
     });
 
-    var animEndEventNames = {
-        'WebkitAnimation': 'webkitAnimationEnd',
-        'OAnimation': 'oAnimationEnd',
-        'msAnimation': 'MSAnimationEnd',
-        'animation': 'animationend'
-    };
-    // animation end event name
-    var animEndEventName = animEndEventNames[Modernizr.prefixed('animation')];
-    // support css animations
-    var support = Modernizr.cssanimations;
-
     var $navigation_menu_buttons = $(".navigation_menu_button");
     $navigation_menu_buttons.click(function() {
-        var nextPage = $navigation_menu_buttons.index(this)
+        var nextPage = $navigation_menu_buttons.index(this);
         if (nextPage !== currentPage) {
-
             changePage(nextPage);
         }
     });
@@ -122,8 +107,8 @@ $(window).on("load", function () {
     });
 
 
-    $(document).keydown(function (e) {
-        switch (e.which) {
+    $(document).keydown(function (event) {
+        switch (event.which) {
             case 37:
                 changePage(currentPage - 1);
                 break;
@@ -131,16 +116,22 @@ $(window).on("load", function () {
                 changePage(currentPage + 1);
                 break;
         }
-        e.preventDefault();
+        event.preventDefault();
     });
 
 
+    var animationEndEventNames = {
+        'WebkitAnimation': 'webkitAnimationEnd',
+        'OAnimation': 'oAnimationEnd',
+        'msAnimation': 'MSAnimationEnd',
+        'animation': 'animationend'
+    };
+
+    var animationEndEventName = animationEndEventNames[Modernizr.prefixed('animation')];
     var animating = false;
     var currentPage = 0;
     var $pages = $(".page");
     //var footerColors = ["#F34A53", "#4B515D", "#4B515D"];
-    //var footerColors = ["#4B515D", "#4B515D", "#4B515D"];
-
 
     var prevOutClass = 'page-rotateLeftSideFirst';
     var prevInClass = 'page-moveFromLeft page-delay200 page-ontop';
@@ -150,30 +141,35 @@ $(window).on("load", function () {
 
     function changePage(nextPage) {
         if (!animating && nextPage >= 0 && nextPage < $pages.length) {
-            animating = true;
             var $current = $pages.eq(currentPage);
             var $next = $pages.eq(nextPage);
 
-            $navigation_menu_buttons.eq(currentPage).removeClass("current");
-            $navigation_menu_buttons.eq(nextPage).addClass("current");
+            if (animationEndEventName) {
+                animating = true;
+                $navigation_menu_buttons.eq(currentPage).removeClass("current");
+                $navigation_menu_buttons.eq(nextPage).addClass("current");
 
-            var outClass = nextPage > currentPage ? nextOutClass : prevOutClass;
-            var inClass = nextPage > currentPage ? nextInClass : prevInClass;
-            currentPage = nextPage;
+                var outClass = nextPage > currentPage ? nextOutClass : prevOutClass;
+                var inClass = nextPage > currentPage ? nextInClass : prevInClass;
+                currentPage = nextPage;
 
-            //$("#footer").css("background-color", footerColors[currentPage]);
-            var firstCallback = true;
-            $current.addClass(outClass).off(animEndEventName).on(animEndEventName, endAnimation);
-            $next.addClass(inClass + " page-current").off(animEndEventName).on(animEndEventName, endAnimation);
+                //$("#footer").css("background-color", footerColors[currentPage]);
+                var firstCallback = true;
+                $current.addClass(outClass).off(animationEndEventName).on(animationEndEventName, endAnimation);
+                $next.addClass(inClass + " page-current").off(animationEndEventName).on(animationEndEventName, endAnimation);
 
-            function endAnimation() {
-                if (firstCallback) {
-                    firstCallback = false;
-                } else {
-                    $current.removeClass(outClass + " page-current");
-                    $next.removeClass(inClass);
-                    animating = false;
+                function endAnimation() {
+                    if (firstCallback) {
+                        firstCallback = false;
+                    } else {
+                        $current.removeClass(outClass + " page-current");
+                        $next.removeClass(inClass);
+                        animating = false;
+                    }
                 }
+            } else {
+                $current.removeClass("page-current");
+                $next.addClass("page-current")
             }
         }
     }
