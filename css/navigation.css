@@ -4,7 +4,7 @@
     justify-content: center;
     flex-direction: row;
     font-size: 20px;
-    color: white;
+    color: rgba(255, 255, 255, 0.6);
     padding: 7px 0;
     /*border-bottom: solid white 1px;*/
     flex-shrink: 0;
@@ -15,7 +15,7 @@
     font-size: 16px;
     width: 175px;
     height: 25px;
-    margin-right: 20px;
+    margin-right: 10px;
     font-weight: 200;
 
     line-height: 25px;
@@ -24,6 +24,7 @@
     -moz-transition: all 0.3s ease-in-out;
     -ms-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
     outline: none;
     padding: 4px 0 4px 3px;
     /*border-left: solid;*/
@@ -34,7 +35,8 @@
 }
 
 .navigation_menu_button:hover {
-    background-color: rgba(255, 255, 255, 0.4);
+    /*background-color: rgba(255, 255, 255, 0.4);*/
+    color:white;
 }
 
 
@@ -49,11 +51,11 @@
     margin-right: 20px;
     margin-left: 20px;
     /*color: #4B515D;*/
-    color: white;
+    color: rgba(255, 255, 255, 0.6);;
 }
 
 .navigation:hover > i {
-    color: #F34A53;
+    color: white;
 }
 
 .navigation_left:hover > i, .navigation_left:focus > i, .navigation_left:active > i {

@@ -16,14 +16,14 @@
 .social_button {
     font-size: 25px;
     color: white;
+    color: rgba(255, 255, 255, 0.6);
 }
 
 .social:hover > i, .social:focus > i, .social:active > i {
     -webkit-animation-name: hvr-bob-float-top, hvr-bob-top;
     animation-name: hvr-bob-float-top, hvr-bob-top;
-    /*color: #F34A53;*/
+    color: white;
 }
-
 
 .social_text {
     display: inline-block;
