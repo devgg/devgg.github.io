@@ -25,7 +25,10 @@ cleancss css/main.css -o build/css/main.css
 uglifyjs js/main.js -o build/js/main.js
 
 cd build
-git add .
+git add -A
+SHA=`git rev-parse --verify HEAD`
 git commit -m "Deploy to GitHub Pages: ${SHA}"
+
+git push origin gh-pages
 
 ls -LR build
