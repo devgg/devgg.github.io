@@ -2,3 +2,9 @@ language: node_js
 node_js: node
 
 script: build/script.sh
+
+
+env:
+  global:
+  - ENCRYPTION_LABEL: "2f5895d43ae4"
+  - COMMIT_AUTHOR_EMAIL: "flo.gauger@gmail.com"
