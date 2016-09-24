@@ -3,7 +3,6 @@ node_js: node
 
 script: build/script.sh
 
-
 env:
   global:
   - ENCRYPTION_LABEL: "2f5895d43ae4"
