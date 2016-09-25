@@ -1,0 +1,31 @@
+
+
+
+/*.svg_wrapper {*/
+    /*width: 100px;*/
+/*}*/
+
+
+#logo_lu {
+    height: 22px;
+}
+
+#logo_ki {
+    height: 15px;
+}
+
+#logo_sa {
+    height: 18px;
+}
+
+#logo_ch {
+    height: 16px;
+}
+
+.logo_fill {
+    fill: black;
+}
+
+.logo_stroke {
+    stroke: black;
+}

@@ -1,8 +1,10 @@
+
 @import url("animation.css");
 @import url("common.css");
+
+@import url("home.css");
 @import url("navigation.css");
-@import url("social.css");
-@import url("page.css");
-@import url("page1.css");
-@import url("page2.css");
-@import url("page3.css");
+@import url("skills.css");
+@import url("experience.css");
+@import url("projects.css");
+@import url("contact.css");

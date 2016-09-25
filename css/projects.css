@@ -1,0 +1,80 @@
+#projects_container {
+    background-color: rgba(30, 174, 219, 0.3);
+    /*background-color: #4B515D;*/
+    /*background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../img/j.jpg");*/
+    width: 100%;
+}
+
+.project {
+    position: relative;
+    width: 90%;
+    margin: 0 auto 20px auto;
+}
+
+.project img {
+    display: block;
+    /*border: solid #bbb 1px;*/
+    /*border-radius: 5px;*/
+    width: 100%;
+    cursor: pointer;
+}
+
+.project_overlay {
+    position: absolute;
+    top: 0;
+    /*top: 1px;*/
+    /*left: 1px;*/
+    height: 100%;
+    width: 100%;
+    visibility: hidden;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0);
+    -moz-transition: visibility, background-color;
+    -webkit-transition: visibility, background-color;
+    -o-transition: visibility, background-color;
+    transition: visibility, background-color;
+    transition-duration: 0.3s;
+}
+
+.project:hover .project_overlay {
+    visibility: visible;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.project:hover img {
+    border-color: #999;
+}
+
+.overlay_content {
+    white-space: nowrap;
+    position: absolute;
+    font-size: 15px;
+    left: 500px;
+    transition: height, left;
+    -moz-transition: top, left;
+    -webkit-transition:top, left;
+    -o-transition: top, left;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+}
+
+.project:hover .overlay_content {
+    left: 0;
+}
+
+.project_headline {
+    margin: 20% 0 0 10%;
+    font-size: 1.8rem;
+    line-height: 1.5;
+    letter-spacing: -.05rem;
+}
+
+.project_subtitle {
+    margin-left: 10%;
+}
+
+
+
+
+

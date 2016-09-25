@@ -1,0 +1,47 @@
+.skill {
+    padding: 5px 5px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    border-radius: 2px;
+    transition: padding 0.3s ease-in-out;
+    height: 16px;
+    /*max-width: 400px;*/
+    /*cursor: pointer;*/
+    /*margin:auto;*/
+    line-height: 16px;
+}
+
+
+.skill_name {
+    text-align: start;
+}
+
+.skill_rating {
+    color: #1EAEDB;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.skill:hover {
+    background-color: rgba(30, 174, 219, 0.2);
+}
+
+
+#skills .row {
+    margin-bottom: 2rem;
+}
+
+#skills h6 {
+    margin-bottom: 1rem;
+}
+
+section {
+    border-bottom: 1px solid #eee;
+}
+
+@media (min-width: 550px) {
+    section {
+        padding: 6rem 0;
+    }
+}

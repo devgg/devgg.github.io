@@ -14,15 +14,13 @@
 }
 
 .social_button {
-    font-size: 25px;
-    color: white;
-    color: rgba(255, 255, 255, 0.6);
+    font-size: 3rem;
+    /*color: rgba(255, 255, 255, 0.6);*/
 }
 
 .social:hover > i, .social:focus > i, .social:active > i {
     -webkit-animation-name: hvr-bob-float-top, hvr-bob-top;
     animation-name: hvr-bob-float-top, hvr-bob-top;
-    color: white;
 }
 
 .social_text {
@@ -36,8 +34,7 @@
     -moz-osx-font-smoothing: grayscale;
     position: relative;
     overflow: hidden;
-    font-size: 6px;
-    color: white;
+    font-size: 0.8rem;
     font-weight: 200;
 }
 
@@ -61,4 +58,21 @@
 .social:hover > .social_text:before, .social:focus > .social_text:before, .social:active > .social_text:before {
     left: 0;
     right: 0;
+}
+
+
+#contact textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+#social_container {
+    background-color: #1EAEDB;;
+    color: white;
+    padding: 60px 0;
+}
+
+#contact {
+    padding-bottom: 0;
+    border-bottom: none;
 }
