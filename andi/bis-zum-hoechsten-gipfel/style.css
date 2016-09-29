@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Raleway", sans-serif;
+    font-size: 24px;
+}
+
+ body {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     margin-bottom: 100px;
+ }
+
+.text {
+    width: 70%;
+}
+
+div {
+    margin-top: 30px;
+}
+
+.img {
+    width: 100%;
+    height: 300px;
+    background: no-repeat fixed bottom center;
+    background-size: cover;
+}
+
+#hoell {
+    background-image: url(hoell.jpg);
+}
+
+#frei {
+    background-image: url(frei.jpg);
+}
+
+#sleep {
+    background-image: url(sleep.jpg);
+}
+
+#feld {
+    background-image: url(feld.jpg);
+}
+
+h1 {
+    margin-top: 50px;
+    font-size: 30px;
+    color: #ff4444;
+}
+
+#motto {
+    color: #4285F4;
+}
