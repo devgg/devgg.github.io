@@ -1,0 +1,3 @@
+[submodule "subpages/fonticon"]
+	path = subpages/fonticon
+	url = https://github.com/devgg/FontIcon.git
