@@ -156,7 +156,7 @@ $(window).on('load', function() {
       distance : 100,
       maxPatternLength : 32,
       minMatchCharLength : 1,
-      keys : [ "id", "name", "search" ]
+      keys : [ "id", "name", "search_terms" ]
     };
     var fuse = new Fuse(icons, options);
     $search.on("input", function() {
@@ -249,13 +249,3 @@ $(window).on('load', function() {
     ctx.font = getFont(symbolStyle, i * $size.val() / 100);
   }
 });
-
-// used to update the icons
-// function updateIcons() {
-//    $.get('https://rawgit.com/FortAwesome/Font-Awesome/master/src/icons.yml',
-//    function (data) {
-//        var parsedYaml = jsyaml.load(data);
-//        console.log(JSON.stringify(parsedYaml));
-//    });
-//<!--<script src="lib/js-yaml.min.js"></script>-->
-//}
